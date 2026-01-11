@@ -21,6 +21,7 @@ flow:
       ↓
   Gold Layer (Analytics-Ready Views)
 ```
+![Data Warehouse Architecture](https://raw.githubusercontent.com/AvishkaEdirisuriya/Data_Warehouse_Project_SQL/main/Docs/Data_Warehouse_Architecture.jpg)
 
 | Layer  | Purpose |
 |------|--------|
