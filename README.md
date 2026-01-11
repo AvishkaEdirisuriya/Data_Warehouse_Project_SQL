@@ -101,27 +101,26 @@ EXEC silver.load_silver;
 ## 🥇 Gold Layer (Analytics & Reporting)
 
 ### 🎯 Purpose
-
-Provide business-ready datasets
-Implement Star Schema
-Support BI tools and ad-hoc analytics
+- Provide business-ready datasets
+- Implement Star Schema
+- Support BI tools and ad-hoc analytics
 
 ### Gold Objects (Views)
 #### 📘 Dimension: `dim_products`
-Product attributes
-Category & subcategory mapping
-Active products only (SCD-ready logic)
+- Product attributes
+- Category & subcategory mapping
+- Active products only (SCD-ready logic)
 
 #### 👤 Dimension: `dim_customers`
-Unified customer profile
-Gender resolution logic (CRM → ERP fallback)
-Country enrichment
-Clean demographic attributes
+- Unified customer profile
+- Gender resolution logic (CRM → ERP fallback)
+- Country enrichment
+- Clean demographic attributes
 
 #### 📊 Fact: `fact_sales`
-Sales transactions
-Linked to product & customer dimensions
-Ready for aggregation and KPI reporting
+- Sales transactions
+- Linked to product & customer dimensions
+- Ready for aggregation and KPI reporting
 
 ## ⭐ Star Schema Overview
 
