@@ -36,28 +36,37 @@ Gold Layer
 - **Language**: T-SQL
 - **ETL Method**: Stored Procedures
 - **Data Source**: CSV Files (CRM & ERP systems)
-- **Version Control**: Git & GitHub
 
 ---
 
-## 📂 Project Structure
+## 🧱 Layer Details
 
-sql-data-warehouse-project/
-│
-├── datasets/
-│ ├── source_crm/
-│ │ ├── cust_info.csv
-│ │ ├── prd_info.csv
-│ │ └── sales_details.csv
-│ └── source_erp/
-│ ├── CUST_AZ12.csv
-│ ├── LOC_A101.csv
-│ └── PX_CAT_G1V2.csv
-│
-├── sql/
-│ ├── 01_create_database_and_schemas.sql
-│ ├── 02_bronze_layer.sql
-│ ├── 03_silver_layer.sql
-│ └── 04_gold_layer.sql
-│
-└── README.md
+---
+
+## 🥉 Bronze Layer (Raw Data)
+
+### 🎯 Purpose
+- Store raw, unmodified data from source systems
+- Act as a **landing zone** for ingestion
+
+### Key Features
+- Tables mirror source structure
+- Data loaded using `BULK INSERT`
+- Tables truncated before every load
+- No transformations applied
+
+### Stored Procedure
+```sql
+EXEC bronze.load_bronze;
+```
+## Bronze Tables
+
+crm_cust_info
+crm_prd_info
+crm_sales_details
+erp_cust_az12
+erp_loc_a101
+erp_px_cat_g1v2
+
+
+
