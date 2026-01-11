@@ -59,7 +59,7 @@ Gold Layer
 ```sql
 EXEC bronze.load_bronze;
 ```
-## Bronze Tables
+### Bronze Tables
 
 - crm_cust_info
 - crm_prd_info
@@ -67,6 +67,71 @@ EXEC bronze.load_bronze;
 - erp_cust_az12
 - erp_loc_a101
 - erp_px_cat_g1v2
+
+## 🥈 Silver Layer (Cleansed & Transformed)
+
+### 🎯 Purpose
+- Clean, standardize, and validate data
+- Resolve duplicates and inconsistencies
+- Prepare data for analytics
+
+### Key Transformations
+- Deduplication using `ROW_NUMBER()`
+- Gender & marital status normalization
+- Date validation and correction
+- Sales value reconciliation
+- Product category extraction
+- Country code standardization
+- Default handling for missing or invalid values
+
+- ### Stored Procedure
+```sql
+EXEC silver.load_silver;
+```
+
+### Silver Tables
+
+- crm_cust_info
+- crm_prd_info
+- crm_sales_details
+- erp_cust_az12
+- erp_loc_a101
+- erp_px_cat_g1v2
+
+## 🥇 Gold Layer (Analytics & Reporting)
+
+### 🎯 Purpose
+
+Provide business-ready datasets
+Implement Star Schema
+Support BI tools and ad-hoc analytics
+
+### Gold Objects (Views)
+#### 📘 Dimension: `dim_products`
+Product attributes
+Category & subcategory mapping
+Active products only (SCD-ready logic)
+
+#### 👤 Dimension: `dim_customers`
+Unified customer profile
+Gender resolution logic (CRM → ERP fallback)
+Country enrichment
+Clean demographic attributes
+
+#### 📊 Fact: `fact_sales`
+Sales transactions
+Linked to product & customer dimensions
+Ready for aggregation and KPI reporting
+
+## ⭐ Star Schema Overview
+
+          dim_customers
+                |
+                |
+          fact_sales
+                |
+                |
+          dim_products
 
 
 
