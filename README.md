@@ -11,6 +11,7 @@ This project was inspired by the *Data with Baara* YouTube series and extended w
 
 ## 🏗️ Architecture Overview
 
+```
 data_warehouse_pipeline:
   source:
     description: Source CSV Files
@@ -23,8 +24,7 @@ data_warehouse_pipeline:
   gold_layer:
     description: Analytics-Ready Views
     input: silver_layer
-
-
+```
 
 | Layer  | Purpose |
 |------|--------|
