@@ -5,7 +5,7 @@ This project demonstrates the design and implementation of an **end-to-end SQL S
 The solution covers database initialization, schema design, data ingestion, transformation, and analytics-ready views following **modern data engineering best practices**.
 
 📺 **Inspiration & Learning Reference**:  
-This project was inspired by the *Data with Baara* YouTube series and extended with additional transformations, validations, and documentation.
+This project was inspired by the *Data with Baara* YouTube series.
 
 ---
 
