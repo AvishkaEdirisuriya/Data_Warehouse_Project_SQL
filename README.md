@@ -84,7 +84,7 @@ EXEC bronze.load_bronze;
 - Country code standardization
 - Default handling for missing or invalid values
 
-- ### Stored Procedure
+### Stored Procedure
 ```sql
 EXEC silver.load_silver;
 ```
