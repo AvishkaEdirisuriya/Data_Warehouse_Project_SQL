@@ -11,16 +11,19 @@ This project was inspired by the *Data with Baara* YouTube series and extended w
 
 ## 🏗️ Architecture Overview
 
-Source CSV Files
-↓
-Bronze Layer
-(Raw Data)
-↓
-Silver Layer
-(Cleaned & Transformed)
-↓
-Gold Layer
-(Analytics-Ready Views)
+data_warehouse_pipeline:
+  source:
+    description: Source CSV Files
+  bronze_layer:
+    description: Raw Data
+    input: source
+  silver_layer:
+    description: Cleaned & Transformed
+    input: bronze_layer
+  gold_layer:
+    description: Analytics-Ready Views
+    input: silver_layer
+
 
 
 | Layer  | Purpose |
